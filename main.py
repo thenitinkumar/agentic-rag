@@ -11,6 +11,9 @@ Usage:
 import argparse
 import sys
 
+from dotenv import load_dotenv
+load_dotenv()
+
 from src.config import SETTINGS
 from src.ingestion import build_vector_index
 from src.seed_data import seed_all
