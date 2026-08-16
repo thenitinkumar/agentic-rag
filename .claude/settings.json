@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:8000/api/health)",
+      "Bash(curl -s -X POST http://localhost:8000/api/query -H \"Content-Type: application/json\" -d \"{\\\\\"question\\\\\": \\\\\"What is Apple revenue?\\\\\"}\")",
+      "PowerShell(cd \"c:\\\\Users\\\\rnitinkumar\\\\Downloads\\\\agentic-rag\"; Start-Process -FilePath \"python\" -ArgumentList \"-m uvicorn backend.app.main:app --port 8000\" -RedirectStandardOutput \"$env:TEMP\\\\uvicorn_out.txt\" -RedirectStandardError \"$env:TEMP\\\\uvicorn_err.txt\" -NoNewWindow; Start-Sleep -Seconds 4; Get-Content \"$env:TEMP\\\\uvicorn_err.txt\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Sleep -Seconds 5; Get-Content \"$env:TEMP\\\\uvicorn_err.txt\" -ErrorAction SilentlyContinue)",
+      "PowerShell(Start-Sleep -Seconds 6; Get-Content \"$env:TEMP\\\\uvicorn_err.txt\" -ErrorAction SilentlyContinue)",
+      "PowerShell($proc = Get-NetTCPConnection -LocalPort 8000 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -First 1; if \\($proc\\) { Stop-Process -Id $proc -Force; \"Killed PID $proc\" } else { \"Nothing on 8000\" })",
+      "PowerShell(Start-Sleep -Seconds 10; Get-Content \"$env:TEMP\\\\uvicorn_err2.txt\" -ErrorAction SilentlyContinue)"
+    ]
+  }
+}

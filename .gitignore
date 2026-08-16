@@ -11,10 +11,15 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.pytest_cache/
 
 # Environment
 .env
 .env.*
+
+# Frontend build artifacts
+node_modules/
+frontend/dist/
 
 # IDE
 .vscode/
