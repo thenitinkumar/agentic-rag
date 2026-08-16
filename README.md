@@ -483,4 +483,4 @@ The evaluation harness also runs in mock mode — the judge stub returns a fixed
 - The vector index must be rebuilt (`python main.py ingest`) whenever `data/docs/` changes.
 
 
-Author:Nitin Kumar
+Author:Nitin Kumar Rustumpet
