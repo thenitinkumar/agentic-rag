@@ -481,3 +481,6 @@ The evaluation harness also runs in mock mode — the judge stub returns a fixed
 - `WebRetriever` is a stub — the retriever interface is pluggable, but web search is not wired into the router by default.
 - Embedding model download requires network access to Hugging Face on first run. Subsequent runs use the local cache.
 - The vector index must be rebuilt (`python main.py ingest`) whenever `data/docs/` changes.
+
+
+Author:Nitin Kumar
