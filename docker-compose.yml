@@ -1,0 +1,14 @@
+services:
+  app:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      # Mount the data directory so the database and vector index
+      # persist between container restarts (generated on first boot)
+      - ./data:/app/data
+    env_file:
+      - path: .env
+        required: false   # app runs in mock mode if no .env present
+    environment:
+      - PYTHONUNBUFFERED=1
